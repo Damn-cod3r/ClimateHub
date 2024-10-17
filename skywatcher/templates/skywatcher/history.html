@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather History</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Table Styles */
+        .custom-table {
+            background-color: #f7f9fc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-collapse: separate;
+        }
+
+        .custom-table thead {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+
+        .custom-table th, .custom-table td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+
+        /* Alternate row color and hover effect */
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: #e9ecef;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #d4edda;
+        }
+
+        /* Rounded corners for the top and bottom of the table */
+        .custom-table thead th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        .custom-table thead th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        .custom-table tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        .custom-table tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Subtle shadow and font customization for rows */
+        .custom-table tbody tr {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Weather History</h1>
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Temperature (°C)</th>
+                    <th>Description</th>
+                    <th>Wind Speed (km/h)</th>
+                    <th>Humidity (%)</th>
+                    <th>Date Searched</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for weather in weather_history %}
+                <tr>
+                    <td>{{ weather.city }}</td>
+                    <td>{{ weather.temperature }}</td>
+                    <td>{{ weather.description }}</td>
+                    <td>{{ weather.wind_speed }}</td>
+                    <td>{{ weather.humidity }}</td>
+                    <td>{{ weather.date_searched }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional: Bootstrap JS dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
