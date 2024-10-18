@@ -11,7 +11,14 @@
 - 🌐 User-friendly interface built with Bootstrap for responsive design.
 
 ## Videos
+Default Interface:
+
 https://github.com/user-attachments/assets/5926ad5f-5719-4d71-b0b4-8e1cadea548a
+
+Weather History
+
+https://github.com/user-attachments/assets/286b64d5-c2b3-444f-9bbf-ee5d80fc96fd
+
 
 ## Screenshots
 
