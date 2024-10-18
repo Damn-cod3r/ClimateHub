@@ -10,9 +10,14 @@
 - 🎨 Dynamic background and animations based on the weather conditions (sunny, cloudy, rainy, etc.).
 - 🌐 User-friendly interface built with Bootstrap for responsive design.
 
+## Videos
+
+
 ## Screenshots
 
-![Main Page](https://via.placeholder.com/600x300.png) <!-- Replace this with an actual screenshot once available -->
+![image](https://github.com/user-attachments/assets/0dd28d6d-fe8e-4cbf-bf4d-e0cf07cd192f)
+![image](https://github.com/user-attachments/assets/bf12cb4f-a49e-4d33-b33d-2a00bdd53788)
+![image](https://github.com/user-attachments/assets/a08eff76-f7bc-4ebe-b520-52f87ddfe0bb)
 
 ## Tech Stack
 
