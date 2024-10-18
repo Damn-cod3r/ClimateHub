@@ -1,5 +1,8 @@
 # ClimateHub 🌤️
 
+![Screenshot 2024-10-18 154440](https://github.com/user-attachments/assets/441ee2cd-d047-4121-9e59-d23a957e573f)
+
+
 **ClimateHub** is a Django-based weather application that fetches real-time weather information using the OpenWeatherMap API. The application allows users to search for the current weather in any city, view weather details like temperature, humidity, wind speed, and more. The search history is stored in a database and can be viewed at any time.
 
 ## Features
