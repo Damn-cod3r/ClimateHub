@@ -153,9 +153,12 @@ Feel free to fork this repository, make changes, and submit pull requests. Contr
 4. Push to the branch (`git push origin feature/your-feature`)
 5. Open a pull request
 
-## License
 
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any issues or contributions, please contact chidambaram sekar at chidambaram097@gmail.com.
 
 ## Acknowledgments
 
@@ -165,4 +168,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 **Powered by ClimateHub — All Rights Reserved © 2024**
 
-```
