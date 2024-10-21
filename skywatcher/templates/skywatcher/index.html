@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateHub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background container - dynamic background color based on weather -->
+    <div class="container-fluid text-center" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;" id="weather-background">
+        <br>
+        <!-- App Header -->
+        <div class="mb-4">
+            <h1 class="display-4" style="font-weight: bold;">ClimateHub 🌤️</h1>
+            <p class="lead">Get real-time weather updates for your city</p>
+        </div>
+
+        <!-- Search Bar -->
+        <form class="form-inline justify-content-center mb-5" method="get">
+            <input type="text" name="city" class="form-control mr-2" placeholder="Enter City Name" style="width: 300px;">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <!-- Weather Info -->
+        {% if city %}
+        <div class="card mx-auto" style="width: 18rem; background: rgba(255, 255, 255, 0.8); color: #333;">
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">{{ city }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ weather_description }}</h6>
+                <p class="card-text" style="font-size: 1.5rem;">🌡️ {{ temperature }}°C</p>
+                <div class="d-flex justify-content-between">
+                    <span>🌬️ Wind: {{ wind_speed }} km/h</span>
+                    <span>💧 Humidity: {{ humidity }}%</span>
+                </div>
+                <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="Weather Icon">
+            </div>
+        </div>
+        {% elif error %}
+        <div class="alert alert-danger mt-3">{{ error }}</div>
+        {% endif %}
+        
+        <a href="{% url 'history' %}" class="btn btn-primary mt-4">View Weather History</a>
+        <!-- Footer -->
+        <footer class="mt-5">
+            <p>Powered by <strong>ClimateHub</strong> &mdash; All Rights Reserved © 2024</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Inline JavaScript to Dynamically Change Background -->
+    <script>
+        // Dummy example of weather conditions, replace this with actual condition
+        var weatherCondition = "{{ weather_description }}".toLowerCase();
+        
+        // Reference to the background container
+        var bgContainer = document.getElementById("weather-background");
+        
+        // Apply different animations and colors based on weather
+        if (weatherCondition.includes("clear")) {
+            // Sunny Day Animation
+            bgContainer.style.background = "linear-gradient(135deg, #fddb92, #d1fdff)";
+            bgContainer.innerHTML += `<div class="spinner-grow text-warning" role="status" style="width: 4rem; height: 4rem; animation: spin 3s linear infinite;"></div>`;
+        } else if (weatherCondition.includes("rain")) {
+            // Rainy Day Animation
+            bgContainer.style.background = "linear-gradient(135deg, #a1c4fd, #c2e9fb)";
+            bgContainer.innerHTML += `<div class="spinner-grow text-info" role="status" style="width: 2rem; height: 2rem; margin-top: 20px; animation: float 1s linear infinite;"></div>
+                                      <div class="spinner-grow text-info" role="status" style="width: 2rem; height: 2rem; margin-top: 30px; animation: float 2s linear infinite;"></div>`;
+        } else if (weatherCondition.includes("cloud")) {
+            // Cloudy Day Animation
+            bgContainer.style.background = "linear-gradient(135deg, #757f9a, #d7dde8)";
+            bgContainer.innerHTML += `<div class="spinner-grow text-secondary" role="status" style="width: 3rem; height: 3rem; animation: pulse 2s linear infinite;"></div>`;
+        } else {
+            // Default Background
+            bgContainer.style.background = "linear-gradient(135deg, #00c6ff, #0072ff)";
+        }
+    </script>
+</body>
+</html>
