@@ -1,5 +1,4 @@
 # ClimateHub 🌤️
-
 ![Screenshot 2024-10-18 154440](https://github.com/user-attachments/assets/441ee2cd-d047-4121-9e59-d23a957e573f)
 
 
